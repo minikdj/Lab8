@@ -4,14 +4,14 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab7/source/ClippingPlane.cpp" "/Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab7/build/CMakeFiles/output.dir/source/ClippingPlane.cpp.o"
-  "/Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab7/source/Defines.cpp" "/Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab7/build/CMakeFiles/output.dir/source/Defines.cpp.o"
-  "/Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab7/source/FrameBuffer.cpp" "/Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab7/build/CMakeFiles/output.dir/source/FrameBuffer.cpp.o"
-  "/Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab7/source/Lab.cpp" "/Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab7/build/CMakeFiles/output.dir/source/Lab.cpp.o"
-  "/Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab7/source/PerFragmentOperations.cpp" "/Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab7/build/CMakeFiles/output.dir/source/PerFragmentOperations.cpp.o"
-  "/Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab7/source/PerVertexOperations.cpp" "/Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab7/build/CMakeFiles/output.dir/source/PerVertexOperations.cpp.o"
-  "/Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab7/source/Rasterization.cpp" "/Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab7/build/CMakeFiles/output.dir/source/Rasterization.cpp.o"
-  "/Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab7/source/ShapeStructs.cpp" "/Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab7/build/CMakeFiles/output.dir/source/ShapeStructs.cpp.o"
+  "/Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab8/source/ClippingPlane.cpp" "/Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab8/build/CMakeFiles/output.dir/source/ClippingPlane.cpp.o"
+  "/Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab8/source/Defines.cpp" "/Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab8/build/CMakeFiles/output.dir/source/Defines.cpp.o"
+  "/Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab8/source/FrameBuffer.cpp" "/Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab8/build/CMakeFiles/output.dir/source/FrameBuffer.cpp.o"
+  "/Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab8/source/Lab.cpp" "/Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab8/build/CMakeFiles/output.dir/source/Lab.cpp.o"
+  "/Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab8/source/PerFragmentOperations.cpp" "/Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab8/build/CMakeFiles/output.dir/source/PerFragmentOperations.cpp.o"
+  "/Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab8/source/PerVertexOperations.cpp" "/Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab8/build/CMakeFiles/output.dir/source/PerVertexOperations.cpp.o"
+  "/Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab8/source/Rasterization.cpp" "/Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab8/build/CMakeFiles/output.dir/source/Rasterization.cpp.o"
+  "/Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab8/source/ShapeStructs.cpp" "/Users/danminik/Desktop/School/SeniorYear/Spring/CSE287/Labs/Lab8/build/CMakeFiles/output.dir/source/ShapeStructs.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "Clang")
 
