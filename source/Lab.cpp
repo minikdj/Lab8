@@ -215,8 +215,6 @@ static void SpecialKeysCB(int key, int x, int y)
 
     PerVertex::viewingTransformation = transView * rotateViewX * rotateViewY;
 
-
-
 	glutPostRedisplay();
 
 } // end SpecialKeysCB
@@ -279,38 +277,28 @@ void viewMenu( int value )
 	switch( value ) {
 
 		case( 1 ):
-
 			PerVertex::viewingTransformation = glm::translate(glm::vec3( 0.0f, 0.0f, -14.0 ) );
 			break;
 
 		case( 2 ):
-
             PerVertex::viewingTransformation = glm::rotate(glm::translate(glm::vec3( 0.0f, 0.0f, -14.0 )) , glm::radians(45.0f), glm::vec3(1.0, 0.0, 0.0));
-
             break;
 
 		case( 3 ):
-            
             PerVertex::viewingTransformation = glm::rotate(glm::rotate(glm::translate(glm::vec3( 0.0f, 0.0f, -14.0 )) , glm::radians(90.0f), glm::vec3(1.0, 0.0, 0.0)), glm::radians(90.0f), glm::vec3(0.0, 1.0, 0.0));
-
 			break;
 
 		case( 4 ):
-#warning do
-			// TODO
-
+            PerVertex::viewingTransformation = glm::lookAt(dvec3(0.0, 0.0, -14.0), dvec3(0.0, 0.0, 0.0), dvec3(0.0, 1.0, 0.0)); 
 			break;
 
 		case( 5 ):
 #warning do
-			// TODO
 
 			break;
 
 		case( 6 ):
-#warning do
-			// TODO
-
+            PerVertex::viewingTransformation = glm::lookAt(dvec3(0.0, 14.0, 0.0), dvec3(0.0, 0.0, 0.0), dvec3(1.0, 0.0, 0.0));
 			break;
 
 		default:
