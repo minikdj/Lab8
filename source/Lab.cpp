@@ -241,7 +241,7 @@ int main(int argc, char** argv)
 	glutInitWindowSize(WINDOW_WIDTH, WINDOW_HEIGHT);
 
 	// Create a window using a string and make it the current window.
-	GLuint world_Window = glutCreateWindow("Modeling Tranformations");
+	GLuint world_Window = glutCreateWindow("Viewing Transformations");
 
 	// Indicate to GLUT that the flow of control should return to the program after
 	// the window is closed and the GLUTmain loop is exited.
