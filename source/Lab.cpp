@@ -43,14 +43,11 @@ void renderObjects()
     PerVertex::modelingTransformation = glm::translate(dvec3(0.0, 0.0, 0.0)) * glm::rotate(angle, dvec3(0.0, 1.0, 0.0));
 	PerVertex::processTriangleVertices(redPyramid.triangleVertices);
 
-    // right sphere 
-    PerVertex::modelingTransformation = glm::translate(dvec3(3.0, 0.0, 0.0)) * glm::rotate(angle, dvec3(1.0, 0.0, 0.0));
-    PerVertex::processTriangleVertices(redSphere.triangleVertices);
-
-    //left pyramid
+       //left pyramid
     glm::dmat4 scaleModel;
     scaleModel[0][0] = 2.0;
     scaleModel[1][1] = 2.0;
+    scaleModel[2][2] = 2.0;
 
     PerVertex::modelingTransformation = glm::translate(dvec3(-3.0, 0.0, 0.0)) * glm::scale(scaleModel, dvec3(1.0, 1.0, 1.0))
                                             * glm::rotate(angle, dvec3(0.0, 0.0, 1.0));
@@ -62,6 +59,11 @@ void renderObjects()
 
     PerVertex::modelingTransformation = glm::translate(dvec3(3.5, -2.5, -3.5));
     PerVertex::processTriangleVertices(bluePyramid.triangleVertices);
+
+    // right sphere 
+    PerVertex::modelingTransformation = glm::translate(dvec3(3.0, 0.0, 0.0)) * glm::rotate(angle, dvec3(1.0, 0.0, 0.0));
+    PerVertex::processTriangleVertices(redSphere.triangleVertices);
+
 
     // white orbiting pyramid
     PerVertex::modelingTransformation = glm::rotate(-angle, dvec3(0.0, 1.0, 0.0)) * glm::translate(dvec3(10.0, 3.0, 0.0)) * glm::rotate(angle, dvec3(1.0, 0.0, 0.0));
@@ -249,24 +251,20 @@ void viewMenu( int value )
 
 		case( 1 ):
 
-			// TODO
-			PerVertex::viewingTransformation = glm::translate( 
-							glm::vec3( 0.0f, 0.0f, -25.0 ) );
+			PerVertex::viewingTransformation = glm::translate(glm::vec3( 0.0f, 0.0f, -14.0 ) );
 			break;
 
 		case( 2 ):
 
-			// TODO
+            PerVertex::viewingTransformation = glm::rotate(glm::translate(glm::vec3( 0.0f, 0.0f, -14.0 )) , glm::radians(45.0f), glm::vec3(1.0, 0.0, 0.0));
 
-
-			break;
+            break;
 
 		case( 3 ):
-
-			// TODO
+            
+            PerVertex::viewingTransformation = glm::rotate(glm::rotate(glm::translate(glm::vec3( 0.0f, 0.0f, -14.0 )) , glm::radians(90.0f), glm::vec3(1.0, 0.0, 0.0)), glm::radians(90.0f), glm::vec3(0.0, 1.0, 0.0));
 
 			break;
-
 
 		case( 4 ):
 
