@@ -16,7 +16,7 @@ FrameBuffer frameBuffer(WINDOW_WIDTH, WINDOW_HEIGHT);
 
 // Pyramids
 Pyramid redPyramid(color(1.0, 0.0, 0.0, 0.5f), 1.0, 1.0 );
-Pyramid greenPyramid(color(0.0, 1.0, 0.0, 0.5f), 1.0, 1.0);
+Sphere redSphere(color(1.0, 0.0, 0.0, 0.5f), 1.0, 16, 16);
 Pyramid magentaPyramid(color(1.0, 0.0, 1.0, 0.5f), 1.0, 1.0);
 Pyramid bluePyramid(color(0.0, 0.0, 1.0, 0.5f), 1.0, 1.0);
 Pyramid whitePyramid(color(1.0, 1.0, 1.0, 0.5f), 1.0, 1.0);
@@ -43,9 +43,9 @@ void renderObjects()
     PerVertex::modelingTransformation = glm::translate(dvec3(0.0, 0.0, 0.0)) * glm::rotate(angle, dvec3(0.0, 1.0, 0.0));
 	PerVertex::processTriangleVertices(redPyramid.triangleVertices);
 
-    // right pyramid
+    // right sphere 
     PerVertex::modelingTransformation = glm::translate(dvec3(3.0, 0.0, 0.0)) * glm::rotate(angle, dvec3(1.0, 0.0, 0.0));
-    PerVertex::processTriangleVertices(greenPyramid.triangleVertices);
+    PerVertex::processTriangleVertices(redSphere.triangleVertices);
 
     //left pyramid
     glm::dmat4 scaleModel;
@@ -221,6 +221,80 @@ void mainMenu(int value)
 
 } // end mainMenu
 
+void polygonRenderMenu( int value )
+{
+	switch( value ) {
+
+		case( 0 ):
+
+			PerVertex::polygonRenderMode = FILL;
+			break;
+		case( 1 ):
+
+			PerVertex::polygonRenderMode = LINE;
+			break;
+
+		default:
+			std::cout << "Invalid polygon render selection " << std::endl;
+	}
+
+	// Signal GLUT to call display callback
+	glutPostRedisplay( );
+
+} // end polygonRenderMenu
+
+void viewMenu( int value )
+{
+	switch( value ) {
+
+		case( 1 ):
+
+			// TODO
+			PerVertex::viewingTransformation = glm::translate( 
+							glm::vec3( 0.0f, 0.0f, -25.0 ) );
+			break;
+
+		case( 2 ):
+
+			// TODO
+
+
+			break;
+
+		case( 3 ):
+
+			// TODO
+
+			break;
+
+
+		case( 4 ):
+
+			// TODO
+
+			break;
+
+		case( 5 ):
+
+			// TODO
+
+			break;
+
+		case( 6 ):
+
+			// TODO
+
+			break;
+
+		default:
+			std::cout << "Invalid view selection " << std::endl;
+	}
+
+	// Signal GLUT to call display callback
+	glutPostRedisplay( );
+
+} // end viewMenu
+
 
 // To keep the console open on shutdown, start the project with Ctrl+F5 instead of just F5.
 int main(int argc, char** argv)
@@ -255,9 +329,30 @@ int main(int argc, char** argv)
 	glutSpecialFunc(SpecialKeysCB);
 	glutIdleFunc(animate);
 
+	// Create polygon render submenu
+	int polyMenuid = glutCreateMenu( polygonRenderMenu );
+	// Specify menu items and integer identifiers
+	glutAddMenuEntry( "Fill", 0 );
+	glutAddMenuEntry( "Line", 1 );
+
+	// Create view submenu
+	int viewMenuid = glutCreateMenu( viewMenu );
+	// Specify menu items and integer identifiers
+	glutAddMenuEntry( "View 1", 1 );
+	glutAddMenuEntry( "View 2", 2 );
+	glutAddMenuEntry( "View 3", 3 );
+	glutAddMenuEntry( "View 4", 4 );
+	glutAddMenuEntry( "View 5", 5 );
+	glutAddMenuEntry( "View 6", 6 );
+
 	// Create main submenu
-	int menu1id = glutCreateMenu(mainMenu);
-	glutAddMenuEntry("Quit", 0);
+	int menu1id = glutCreateMenu( mainMenu );
+	glutAddSubMenu( "Render", polyMenuid );
+	glutAddSubMenu( "View", viewMenuid );
+	glutAddMenuEntry( "Quit", 0 );
+
+	// Attach menu to right mouse button
+	glutAttachMenu( GLUT_RIGHT_BUTTON );
 
 	// Attach menu to right mouse button
 	glutAttachMenu(GLUT_RIGHT_BUTTON);
