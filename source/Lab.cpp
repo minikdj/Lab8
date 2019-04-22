@@ -289,12 +289,11 @@ void viewMenu( int value )
 			break;
 
 		case( 4 ):
-            PerVertex::viewingTransformation = glm::lookAt(dvec3(0.0, 0.0, -14.0), dvec3(0.0, 0.0, 0.0), dvec3(0.0, 1.0, 0.0)); 
+            PerVertex::viewingTransformation = glm::lookAt(dvec3(0.0, 0.0, 14.0), dvec3(0.0, 0.0, 0.0), dvec3(0.0, 1.0, 0.0)); 
 			break;
 
 		case( 5 ):
-#warning do
-
+            PerVertex::viewingTransformation = glm::lookAt(dvec3(0.0, 7 * sqrt(2), 7 * sqrt(2)), dvec3(0.0, 0.0, 0.0), dvec3(0.0, 0.5, 0.0)); 
 			break;
 
 		case( 6 ):
