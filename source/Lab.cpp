@@ -4,6 +4,10 @@
 
 /********************** GLOBALS ******************************/
 
+double zTrans = -14.0f;
+float rotationX = 0.0f;
+float rotationY = 0.0f;
+
 std::vector<LightSource*> lights;
 
 const GLint FRAMES_PER_SECOND = 60; // Desired maximum number of frames per second
@@ -154,9 +158,27 @@ static void KeyboardCB(unsigned char key, int x, int y)
 		//glutLeaveMainLoop();
 		break;
 
+    case('w') : case('W') :
+        zTrans = zTrans + 1;
+
+        break;
+
+    case('s') : case('S') :
+        zTrans = zTrans - 1;
+        
+        break;
+
 	default:
 		std::cout << key << " key pressed." << std::endl;
 	}
+
+	// Set the viewing transformation based on the values held in the global
+	// varaiables zTrans, rotationX, and rotationY.
+	glm::mat4 transView = glm::translate(glm::vec3(0.0f, 0.0f, zTrans));
+	glm::mat4 rotateViewX = glm::rotate(glm::radians(rotationX), glm::vec3(1.0f, 0.0f, 0.0f));
+    glm::mat4 rotateViewY = glm::rotate(glm::radians(rotationY), glm::vec3(0.0f, 1.0f, 0.0f));
+
+    PerVertex::viewingTransformation = transView * rotateViewX * rotateViewY;
 
 
 	glutPostRedisplay();
